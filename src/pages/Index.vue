@@ -1,33 +1,66 @@
 <template>
-  <Layout>
+  <div class="wrapper">
+    <div class="portfolio">
+      <div class="center">
+        <p>Milosevic</p>
+      </div>
+    </div>
 
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
-  </Layout>
+    <div class="blog">
+      <div class="center">
+        <p>David</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
-  }
-}
+    title: "Welcome!",
+  },
+};
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
+<style lang="scss">
+.wrapper {
+  display: flex;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
+}
+
+.blog {
+  border-left: 2px solid #2e8b57;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+
+  @media (max-width: 576px) {
+  border-top: 2px solid #2e8b57;
+  border-left: none;
+  width: 100%;
+  }
+}
+
+.portfolio {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+  
+ }
+
+.center {
+  justify-content: center;
+  align-items: center;
 }
 </style>

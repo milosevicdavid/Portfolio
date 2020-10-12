@@ -1,33 +1,33 @@
 <template>
     <Layout>
         <div class="container">
-                <h1 class="title">Blog</h1>
+            <h1 class="title">Blog</h1>
 
-                <ul>
-                    <li v-for="{ node } in $page.posts.edges" :key="node.id">
-                        <g-link :to="node.path">
-                            <div class="blog">
-                                <g-image
-                                    alt="Example image"
-                                    :src="node.image.file.url"
-                                    blur="70"
-                                    width="135"
-                                    height="30"
-                                />
-                                    <div class="description">
-                                        <h1>
-                                            {{ node.title }}
-                                        </h1>
-                                        <p>
-                                            {{ node.description }}
-                                        </p>
-                                        <p class="date">Posted on {{ node.date }}</p>
-                                        <p>Read More...</p>
-                                    </div>
+            <ul>
+                <li v-for="{ node } in $page.posts.edges" :key="node.id">
+                    <g-link :to="node.path">
+                        <div class="blog">
+                            <g-image
+                                alt="Example image"
+                                :src="node.image.file.url"
+                                blur="70"
+                                width="135"
+                                height="30"
+                            />
+                            <div class="description">
+                                <h1>
+                                    {{ node.title }}
+                                </h1>
+                                <p>
+                                    {{ node.description }}
+                                </p>
+                                <p class="date">Posted on {{ node.date }}</p>
+                                <p>Read More...</p>
                             </div>
-                        </g-link>
-                    </li>
-                </ul>
+                        </div>
+                    </g-link>
+                </li>
+            </ul>
         </div>
         <div class="pages">
             <Pager
@@ -64,14 +64,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 .title {
-        text-align: center;
+    text-align: center;
 }
 
 .container {
-    
-
     img {
         width: 100%;
     }

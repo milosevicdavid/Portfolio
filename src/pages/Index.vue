@@ -78,9 +78,6 @@ export default {
 
 }
 
-
-
-
 .center {
   cursor: pointer;
   display: flex;
@@ -90,4 +87,5 @@ export default {
   align-items: center;
   flex-direction: column;
 }
+
 </style>

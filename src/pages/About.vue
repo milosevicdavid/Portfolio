@@ -23,6 +23,13 @@
           turpis egestas. Phasellus at consequat dui. Aenean tristique sagittis
           quam, sit amet sollicitudin neque sodales in.
       </div>
+      <div class="icons">
+        <vue-fontawesome class="icon" icon="instagram" size="2" color="#2E8B57"></vue-fontawesome>
+        <vue-fontawesome class="icon" icon="linkedin" size="2" color="#2E8B57"></vue-fontawesome>
+        <vue-fontawesome class="icon" icon="facebook" size="2" color="#2E8B57"></vue-fontawesome>
+        <vue-fontawesome class="icon" icon="envelope" size="2" color="#2E8B57"></vue-fontawesome>
+
+      </div>
     </b-skeleton-wrapper>
   </Layout>
 </template>
@@ -77,5 +84,8 @@ export default {
 
 <style lang="scss">
 
+.icon {
+  display: block;
+}
 
 </style>

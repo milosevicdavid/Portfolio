@@ -3,6 +3,7 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 import BootstrapVue from 'bootstrap-vue'
+import "font-awesome/css/font-awesome.min.css";
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -14,4 +15,5 @@ export default function (Vue, { router, head, isClient }) {
   Vue.use(BootstrapVue)
   Vue.use(VTooltip)
   Vue.component('Layout', DefaultLayout)
+  Vue.component('VueFontawesome', require('vue-fontawesome-icon/VueFontawesome.vue').default);
 }

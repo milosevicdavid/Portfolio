@@ -1,16 +1,18 @@
 <template>
     <Layout>
+    <div class="container">
         <div class="main">
-            <h1 class="">{{ $page.post.title }}</h1>
-            <g-image
-                alt="Example image"
-                :src="$page.post.image.file.url"
-                blur="70"
-                width="135"
-            />
-            <p class="">Posted on {{ $page.post.date }}</p>
-            <div id="body" class="" v-html="body" />
-        </div>
+                <h1 class="">{{ $page.post.title }}</h1>
+                <g-image
+                    alt="Example image"
+                    :src="$page.post.image.file.url"
+                    blur="70"
+                    width="135"
+                />
+                <p class="posted">Posted on {{ $page.post.date }}</p>
+                <div id="body" class="blog-text" v-html="body" />
+            </div>
+    </div>
     </Layout>
 </template>
 
@@ -29,7 +31,7 @@
         path
       }
     }
-    </page-query>
+</page-query>
 
 <script>
 import MarkdownIt from "markdown-it";
@@ -51,51 +53,34 @@ export default {
 </script>
 
 <style lang="scss">
+
+.container {
+    margin-top: 2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        margin-bottom: 2rem;
+    }
+}
+
+.blog-text {
+    margin-top: 2rem;
+}
+
+
 .main {
     width: 760px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     img {
         width: 100%;
         height: 100%;
     }
-}
-
-#body {
-    color: #2d3748;
-}
-
-#body h1 {
-    font-size: 20px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
-#body hr {
-    padding-bottom: 10px;
-}
-
-#body pre {
-    background-color: #2d3748;
-    color: #a0aec0;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#body pre code {
-    overflow: scroll;
-}
-#body ul li {
-    list-style-position: inside;
-    list-style-type: square;
-}
-#body ol {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 20px;
-    list-style-type: decimal;
-    list-style-position: inside;
 }
 </style>

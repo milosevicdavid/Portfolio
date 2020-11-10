@@ -1,4 +1,5 @@
 <template>
+  <Landing>
   <div class="icon-container">
     <div class="icon-row">
       <span class="icon">
@@ -41,6 +42,7 @@
      </span>
    </div>
   </div>
+  </Landing>
 </template>
 
 <script>

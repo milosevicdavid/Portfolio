@@ -4,17 +4,23 @@
          <div class="index_left">
             <g-link to="/about/">
                <div class="center">
-                  <p>
-                     <g-image class="svg" src="~/assets/cranium2.webp" width="260" />
-                  </p>
                   <div class="title">
                      <h1>Portfolio</h1>
                   </div>
+                  <span class="icon-gray">
+                     <g-image
+                        class="svg"
+                        src="~/assets/cranium2.webp"
+                        width="240"
+                     />
+                  </span>
                   <div class="description-text">
                      <p>
-                        &nbsp; Welcome to my portfolio page! My name is David Milosevic and
-                        I am a web developer from Belgrade. Starting from here, you can get info about me, my projects and web development technologies that interests me, skills that I possess, contact info..
-
+                        Welcome to my portfolio page ! My name is David
+                        Milošević and I am a web developer from Belgrade.
+                        Starting from here, you can get info about my projects
+                        and web development technologies that interests me,
+                        skills that I possess, contact info. Enter Here...
                      </p>
                   </div>
                </div>
@@ -24,22 +30,50 @@
          <div class="index-right">
             <g-link to="/blog/">
                <div class="center">
-                        <p>
-                           <g-image class="svg" src="~/assets/notebook.png" width="260"/>
-                        </p>
-                  <h1>Blog</h1>
+                  <div class="title">
+                     <h1>Technology Blog</h1>
+                  </div>
+                  <span class="gray-icon">
+                     <g-image
+                        class="svg"
+                        src="~/assets/notebook.png"
+                        width="240"
+                     />
+                  </span>
                   <div class="description-text">
                      <p>
-                        &nbsp;  Discover the latest news in tech and web development in
-                        this articles section! The most knowledge about all kinds of technologies I am involved in.
+                        Discover the latest news in tech and web development in
+                        this articles section! The most fresh knowledge about
+                        all kinds of technologies I am involved in. Some of the
+                        titles are:
                      </p>
                   </div>
+                  <!-- <span
+                     class="blog-links"
+                     v-for="{ node } in $page.posts.edges"
+                     :key="node.id"
+                  >
+                     <g-link :to="node.path">
+                        <p>
+                           <span class="blog-subtitle">{{ node.title }}</span>
+                           {{ node.date }} ...
+                        </p>
+                     </g-link>
+                 </span> -->
                </div>
             </g-link>
          </div>
       </div>
    </Landing>
 </template>
+
+<page-query>
+     query Posts($page: Int) { posts: allContentfulPortfolioBlog(sortBy: "date", order: DESC, perPage: 3, page: $page)
+    @paginate { totalCount pageInfo { totalPages
+  currentPage } 
+    edges { node { id, path, image { file { url } }, title, body, date (format:
+  "MMMM D, Y") } } } }
+</page-query>
 
 <script>
 export default {
@@ -52,11 +86,25 @@ export default {
 
 <style lang="scss">
 .index_wrapper {
-   font-family: "Orbitron", sans-serif;
    display: flex;
+   font-weight: 600;
+
+   &::after {
+      content: "";
+      background-image: url(../assets/workstation.png);
+      background-size: cover;
+      opacity: 0.017;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+   }
 
    @media (max-width: 576px) {
       flex-direction: column;
+      background-image: url(../assets/workstation2.png);
    }
 }
 .index_left {
@@ -69,6 +117,8 @@ export default {
    border-right: 2px solid #2e8b57;
 
    p {
+      text-indent: 10%;
+      font-size: 1.2rem;
       margin: 2rem auto;
       line-height: 1.5rem;
       word-spacing: 0.4rem;
@@ -78,18 +128,35 @@ export default {
       width: 100%;
       border-right: none;
    }
+
+   .title {
+      margin: 1rem auto;
+
+      h1 {
+         animation-name: moveInLeft;
+         animation-duration: 2s;
+         animation-timing-function: ease-out;
+      }
+      font-size: 3rem;
+   }
 }
 
-.title {
-   h1 {
-      animation-name: moveInLeft;
-      animation-duration: 2s;
-      animation-timing-function: ease-out;
-   }
-   font-size: 3rem;
+.blog-links {
+   text-decoration: underline;
+   font-weight: 400;
+}
+
+.blog-subtitle {
+   font-style: italic;
 }
 
 .description-text {
+   text-align: justify;
+   width: calc(100% - 2rem);
+
+   @media (max-width: 576px) {
+      text-align: center;
+   }
 }
 
 .index-right {
@@ -101,15 +168,15 @@ export default {
    width: 50%;
 
    p {
-      margin: 2rem auto;
-      line-height: 1.5rem;
+      font-size: 1.2rem;
       word-spacing: 0.4rem;
    }
-
-   h1 {
-      animation-name: moveInRight;
-      animation-duration: 2s;
-      animation-timing-function: ease-out;
+   .title {
+      h1 {
+         animation-name: moveInRight;
+         animation-duration: 2s;
+         animation-timing-function: ease-out;
+      }
    }
 
    @media (max-width: 576px) {
@@ -119,31 +186,26 @@ export default {
    }
 }
 
-.svg {
-   color: #363636;
-   fill: #363636;
+.icon-gray {
+   margin: 1rem auto;
 }
 
 .center {
    cursor: pointer;
    display: flex;
    width: 30vw;
-   height: 300px;
-   justify-content: center;
+   justify-content: space-evenly;
    align-items: center;
    flex-direction: column;
+   height: 650px;
 
    @media (max-width: 576px) {
+      p {
+         font-size: 1rem;
+         word-spacing: 0.2rem;
+      }
       width: 70vw;
    }
-}
-
-.fade-enter-active {
-   transition: opacity 6s;
-}
-
-.fade-enter {
-   opacity: 0;
 }
 
 @keyframes moveInLeft {

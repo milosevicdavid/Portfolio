@@ -14,23 +14,7 @@
                     Share:
                 </p>
                 <div class="social-share">
-                    <twitter-button
-                        class="share-button--circle share-button--outline"
-                        btnText
-                    />
-                    <facebook-button
-                        class="share-button--circle share-button--outline"
-                        btnText
-                    />
-                    <whatsapp-button
-                        class="share-button--circle share-button--outline"
-                        btnText
-                    />
-                    <linkedin-button
-                        class="share-button--circle share-button--outline"
-                        btnText
-                    />
-                </div>
+                                                       </div>
 
                 <p class="posted">Posted on {{ $page.post.date }}</p>
                 <div id="body" class="blog-text" v-html="body" />

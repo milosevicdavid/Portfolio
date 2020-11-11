@@ -13,29 +13,7 @@
                 <p>
                     Share:
                 </p>
-                <div class="social-share">
-                    <twitter-button
-                        url
-                        class="share-button--circle share-button--outline"
-                        btnText
-                    />
-                    <facebook-button
-                        url
-                        class="share-button--circle share-button--outline"
-                        btnText
-                    />
-                    <whatsapp-button
-                        url
-                        class="share-button--circle share-button--outline"
-                        btnText
-                    />
-                    <linkedin-button
-                        url
-                        class="share-button--circle share-button--outline"
-                        btnText
-                    />
-                </div>
-
+                
                 <p class="posted">Posted on {{ $page.post.date }}</p>
                 <div id="body" class="blog-text" v-html="body" />
             </div>
@@ -62,19 +40,10 @@
 
 <script>
 import MarkdownIt from "markdown-it";
-import TwitterButton from "vue-share-buttons/src/components/TwitterButton";
-import FacebookButton from "vue-share-buttons/src/components/FacebookButton";
-import WhatsAppButton from "vue-share-buttons/src/components/WhatsAppButton";
-import LinkedInButton from "vue-share-buttons/src/components/LinkedInButton";
+
 
 export default {
-    components: {
-        twitterButton: TwitterButton,
-        facebookButton: FacebookButton,
-        whatsappButton: WhatsAppButton,
-        linkedinButton: LinkedInButton,
-    },
-
+      
     metaInfo() {
         return {
             title: this.$page.post.title,
@@ -86,7 +55,8 @@ export default {
 
             return md.render(this.$page.post.body);
         },
-    },
+
+           },
 };
 </script>
 

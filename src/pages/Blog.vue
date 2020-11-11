@@ -1,5 +1,5 @@
 <template>
-    <Layout>
+    <div class="blog-page">
         <h1 class="title">Blog</h1>
         <div class="wrapper">
             <div class="icons">
@@ -38,79 +38,72 @@
             </div>
 
             <div class="container">
-                <ul>
-                    <li v-for="{ node } in $page.posts.edges" :key="node.id">
-                        <g-link :to="node.path">
-                            <div class="blog">
-                                <b-skeleton-wrapper :loading="loading">
-                                    <template v-slot:loading>
-                                        <b-card>
-                                            <b-skeleton-img
-                                                card-img="top"
-                                                aspect="1:1"
-                                            ></b-skeleton-img>
-                                            <br />
-                                            <b-skeleton
-                                                width="85%"
-                                            ></b-skeleton>
-                                            <b-skeleton
-                                                width="55%"
-                                            ></b-skeleton>
-                                            <b-skeleton
-                                                width="70%"
-                                            ></b-skeleton>
-                                            <b-skeleton
-                                                width="85%"
-                                            ></b-skeleton>
-                                            <b-skeleton
-                                                width="55%"
-                                            ></b-skeleton>
-                                            <b-skeleton
-                                                width="70%"
-                                            ></b-skeleton>
-                                        </b-card>
-                                    </template>
-                                    <br />
-                                    <div class="b-card">
-                                        <g-image
-                                            alt="Example image"
-                                            :src="node.image.file.url"
-                                            blur="70"
-                                            width="135"
-                                            height="30"
-                                        />
-                                        <div class="description">
-                                            <h2>
-                                                {{ node.title }}
-                                            </h2>
-                                            <p>
-                                                {{ node.description }}
-                                            </p>
-                                            <p class="date">
-                                                Posted on {{ node.date }}
-                                            </p>
-                                            <p>Read More...</p>
-                                        </div>
+                <span
+                    class="single-post"
+                    v-for="{ node } in $page.posts.edges"
+                    :key="node.id"
+                >
+                    <g-link :to="node.path">
+                        <div class="blog">
+                            <b-skeleton-wrapper :loading="loading">
+                                <template v-slot:loading>
+                                    <b-card>
+                                        <b-skeleton-img
+                                            card-img="top"
+                                            aspect="1:1"
+                                        ></b-skeleton-img>
+                                        <br />
+                                        <b-skeleton width="85%"></b-skeleton>
+                                        <b-skeleton width="55%"></b-skeleton>
+                                        <b-skeleton width="70%"></b-skeleton>
+                                        <b-skeleton width="85%"></b-skeleton>
+                                        <b-skeleton width="55%"></b-skeleton>
+                                        <b-skeleton width="70%"></b-skeleton>
+                                    </b-card>
+                                </template>
+                                <br />
+                                <div class="b-card">
+                                    <g-image
+                                        alt="Example image"
+                                        :src="node.image.file.url"
+                                        blur="70"
+                                        width="135"
+                                        height="30"
+                                    />
+                                    <div class="description">
+                                        <h2>
+                                            {{ node.title }}
+                                        </h2>
+                                        <p>
+                                            {{ node.description }}
+                                        </p>
+                                        <p class="date">
+                                            Posted on {{ node.date }}
+                                        </p>
+                                        <p>Read More...</p>
                                     </div>
-                                </b-skeleton-wrapper>
-                            </div>
-                        </g-link>
-                    </li>
-                </ul>
+                                </div>
+                            </b-skeleton-wrapper>
+                        </div>
+                    </g-link>
+                </span>
             </div>
         </div>
 
         <div class="pages">
             <Pager
+                class="pages"
                 v-if="$page.posts.pageInfo.totalPages > 1"
                 :info="$page.posts.pageInfo"
             />
         </div>
-    </Layout>
+
+        <Footer />
+    </div>
 </template>
 
 <page-query>
-     query Posts($page: Int) { posts: allContentfulPortfolioBlog(sortBy: "date", order: DESC, perPage: 3, page: $page)
+     query Posts($page: Int) { posts: allContentfulPortfolioBlog(sortBy: "date", order: DESC, perPage: 4, page: $page)
     @paginate { totalCount pageInfo { totalPages
   currentPage } 
     edges { node { id, path, image { file { url } }, title, body, date (format:
@@ -119,10 +112,12 @@
 
 <script>
 import { Pager } from "gridsome";
+import Footer from "~/components/Footer";
 
 export default {
     components: {
         Pager,
+        Footer,
     },
     metaInfo: {
         title: "Blog",
@@ -182,6 +177,8 @@ export default {
 }
 
 .container {
+    display: flex;
+    justify-content: center;
     padding-right: 2rem;
     img {
         width: 100%;
@@ -193,6 +190,18 @@ export default {
     a {
         text-decoration: none;
     }
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.single-post {
+    padding: 2rem;
+    max-width: 350px;
+    min-width: 350px;
+    height: 600px;
 }
 
 .blog {
@@ -216,29 +225,39 @@ export default {
 }
 
 .pages {
-    margin: 2rem auto;
+    padding-top: 2rem;
     text-align: center;
-    font-size: 2rem;
-}
-a {
-    padding: 1rem;
-    text-decoration: none;
-    &:hover {
-        color: #2e8b57;
+    font-size: 1.5rem;
+    a {
+        padding: 1rem;
+        text-decoration: none;
+        &:hover {
+            color: #ffffff;
+        }
     }
 }
 
 .wrapper {
     display: flex;
+    justify-content: center;
+    margin: auto 2rem;
 }
 
 .icons {
-    margin-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
     height: 300px;
     position: -webkit-sticky;
     position: sticky;
-    top: 12rem;
     cursor: pointer;
+    top: calc(50% - 150px);
+
+    @media (min-width: 1024px) {
+        display: none;
+    }
 }
 
 .circle-icon {

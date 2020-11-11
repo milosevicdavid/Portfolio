@@ -18,7 +18,7 @@ query {
 
 <style lang="scss">
 .fade-enter-active {
-  transition: opacity 4s;
+  transition: opacity 2s;
 }
 
 .fade-enter {

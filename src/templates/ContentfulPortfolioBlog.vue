@@ -1,8 +1,11 @@
 <template>
     <Layout>
-    <div class="container">
-        <div class="main">
+        <div class="container">
+            <div class="main">
                 <h1 class="">{{ $page.post.title }}</h1>
+<twitter-button v-bind:isBlank="false" btnText />
+<facebook-button v-bind:isBlank="false" btnText />
+
                 <g-image
                     alt="Example image"
                     :src="$page.post.image.file.url"
@@ -12,7 +15,7 @@
                 <p class="posted">Posted on {{ $page.post.date }}</p>
                 <div id="body" class="blog-text" v-html="body" />
             </div>
-    </div>
+        </div>
     </Layout>
 </template>
 
@@ -35,8 +38,16 @@
 
 <script>
 import MarkdownIt from "markdown-it";
+import TwitterButton from "vue-share-buttons/src/components/TwitterButton";
+import FacebookButton from "vue-share-buttons/src/components/FacebookButton";
 
 export default {
+
+    components: {
+        twitterButton: TwitterButton,
+        facebookButton: FacebookButton,
+    },
+
     metaInfo() {
         return {
             title: this.$page.post.title,
@@ -53,7 +64,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .container {
     margin-top: 2rem;
     color: white;
@@ -69,7 +79,6 @@ export default {
 .blog-text {
     margin-top: 2rem;
 }
-
 
 .main {
     width: 760px;

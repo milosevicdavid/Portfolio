@@ -88,6 +88,7 @@ export default {
 .index_wrapper {
    display: flex;
    font-weight: 600;
+   color: #2e8b57;
 
    &::after {
       content: "";
@@ -105,6 +106,7 @@ export default {
    @media (max-width: 576px) {
       flex-direction: column;
       background-image: url(../assets/workstation2.png);
+      background-size: cover;
    }
 }
 .index_left {

@@ -1,6 +1,14 @@
 module.exports = {
   siteName: "Davidian",
-
+icon: {
+    favicon: './src/favicon.png',
+    touchicon: './src/favicon.png'
+  },
+touchicon: {
+      src: './src/favicon.png',
+      sizes: [76, 152, 120, 167],
+      precomposed: true
+    },
   templates: {
     ContentfulPortfolioBlog: [
       {

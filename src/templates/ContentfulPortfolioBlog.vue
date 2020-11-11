@@ -3,15 +3,35 @@
         <div class="container">
             <div class="main">
                 <h1 class="">{{ $page.post.title }}</h1>
-<twitter-button v-bind:isBlank="false" btnText />
-<facebook-button v-bind:isBlank="false" btnText />
-
                 <g-image
                     alt="Example image"
                     :src="$page.post.image.file.url"
                     blur="70"
                     width="135"
                 />
+
+                <p>
+                    Share:
+                </p>
+                <div class="social-share">
+                    <twitter-button
+                        class="share-button--circle share-button--outline"
+                        btnText
+                    />
+                    <facebook-button
+                        class="share-button--circle share-button--outline"
+                        btnText
+                    />
+                    <whatsapp-button
+                        class="share-button--circle share-button--outline"
+                        btnText
+                    />
+                    <linkedin-button
+                        class="share-button--circle share-button--outline"
+                        btnText
+                    />
+                </div>
+
                 <p class="posted">Posted on {{ $page.post.date }}</p>
                 <div id="body" class="blog-text" v-html="body" />
             </div>
@@ -40,12 +60,15 @@
 import MarkdownIt from "markdown-it";
 import TwitterButton from "vue-share-buttons/src/components/TwitterButton";
 import FacebookButton from "vue-share-buttons/src/components/FacebookButton";
+import WhatsAppButton from "vue-share-buttons/src/components/WhatsAppButton";
+import LinkedInButton from "vue-share-buttons/src/components/LinkedInButton";
 
 export default {
-
     components: {
         twitterButton: TwitterButton,
         facebookButton: FacebookButton,
+        whatsappButton: WhatsAppButton,
+        linkedinButton: LinkedInButton,
     },
 
     metaInfo() {
@@ -62,6 +85,8 @@ export default {
     },
 };
 </script>
+
+
 
 <style lang="scss">
 .container {
@@ -91,5 +116,14 @@ export default {
         width: 100%;
         height: 100%;
     }
+
+    p {
+        margin-top: 1rem;
+    }
+}
+
+.social-share {
+    display: flex;
+    margin-top: 0.5rem;
 }
 </style>

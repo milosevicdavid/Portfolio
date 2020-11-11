@@ -1,5 +1,6 @@
 <template>
    <Landing>
+      <Header />
       <div class="index_wrapper">
          <div class="index_left">
             <g-link to="/about/">
@@ -48,35 +49,23 @@
                         titles are:
                      </p>
                   </div>
-                  <!-- <span
-                     class="blog-links"
-                     v-for="{ node } in $page.posts.edges"
-                     :key="node.id"
-                  >
-                     <g-link :to="node.path">
-                        <p>
-                           <span class="blog-subtitle">{{ node.title }}</span>
-                           {{ node.date }} ...
-                        </p>
-                     </g-link>
-                 </span> -->
                </div>
             </g-link>
          </div>
       </div>
+      <Footer/>
    </Landing>
 </template>
 
-<page-query>
-     query Posts($page: Int) { posts: allContentfulPortfolioBlog(sortBy: "date", order: DESC, perPage: 3, page: $page)
-    @paginate { totalCount pageInfo { totalPages
-  currentPage } 
-    edges { node { id, path, image { file { url } }, title, body, date (format:
-  "MMMM D, Y") } } } }
-</page-query>
-
 <script>
+import Footer from "~/components/Footer";
+import Header from "~/components/Header";
+
 export default {
+   components: {
+      Footer,
+      Header,
+   },
    metaInfo: {
       title: "Welcome!",
    },
@@ -90,7 +79,7 @@ export default {
    font-weight: 600;
    color: #2e8b57;
 
-   &::after {
+   &::before {
       content: "";
       background-image: url(../assets/workstation.png);
       background-size: cover;
@@ -110,8 +99,8 @@ export default {
    }
 }
 .index_left {
+   height: calc(100vh - 240px);
    width: 50%;
-   height: 100vh;
    display: flex;
    flex-direction: column;
    justify-content: space-around;
@@ -129,6 +118,7 @@ export default {
    @media (max-width: 576px) {
       width: 100%;
       border-right: none;
+      height: 100vh;
    }
 
    .title {
@@ -143,15 +133,6 @@ export default {
    }
 }
 
-.blog-links {
-   text-decoration: underline;
-   font-weight: 400;
-}
-
-.blog-subtitle {
-   font-style: italic;
-}
-
 .description-text {
    text-align: justify;
    width: calc(100% - 2rem);
@@ -162,7 +143,7 @@ export default {
 }
 
 .index-right {
-   height: 100vh;
+   height: calc(100vh - 240px);
    display: flex;
    border-left: 2px solid #2e8b57;
    justify-content: center;
@@ -185,6 +166,7 @@ export default {
       border-top: 2px solid #2e8b57;
       border-left: none;
       width: 100%;
+      height: 100vh;
    }
 }
 

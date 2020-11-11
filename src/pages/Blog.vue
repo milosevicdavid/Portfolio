@@ -1,5 +1,7 @@
 <template>
-    <div class="blog-page">
+    <Landing>
+    <div class="height-wrapper">
+    <Header/>
         <h1 class="title">Blog</h1>
         <div class="wrapper">
             <div class="icons">
@@ -97,9 +99,9 @@
                 :info="$page.posts.pageInfo"
             />
         </div>
-
         <Footer />
     </div>
+    </Landing>
 </template>
 
 <page-query>
@@ -113,11 +115,14 @@
 <script>
 import { Pager } from "gridsome";
 import Footer from "~/components/Footer";
+import Header from "~/components/Header";
 
 export default {
     components: {
         Pager,
+        Header,
         Footer,
+        
     },
     metaInfo: {
         title: "Blog",
@@ -170,9 +175,31 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.height-wrapper {
+&::before {
+      content: "";
+      background-image: url(../assets/workstation.png);
+      background-size: cover;
+      opacity: 0.017;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+   }
+
+   @media (max-width: 576px) {
+      flex-direction: column;
+      background-image: url(../assets/workstation2.png);
+      background-size: cover;
+   }
+}
+
+
 .title {
     text-align: center;
-    margin-top: 2rem;
     margin-left: 2rem;
 }
 
@@ -202,6 +229,12 @@ export default {
     max-width: 350px;
     min-width: 350px;
     height: 600px;
+    transition: transform .4s ease-in;
+
+    &:hover {
+        transform: scale(1.05);
+      }
+
 }
 
 .blog {
@@ -215,17 +248,21 @@ export default {
 }
 
 .description {
-    background-color: #2e8b57;
+    background-color: black;
     padding: 0.5rem;
     color: white;
 
     h2 {
         font-size: 1.5rem;
     }
+
+    &:hover {
+   background-color: #2e8b57;
+    }
 }
 
 .pages {
-    padding-top: 2rem;
+    padding-top: 1rem;
     text-align: center;
     font-size: 1.5rem;
     a {

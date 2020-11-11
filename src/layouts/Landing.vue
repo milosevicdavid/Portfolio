@@ -16,7 +16,12 @@ query {
 }
 </static-query>
 
+
+
 <style lang="scss">
+body {
+margin: 0 auto;
+}
 .fade-enter-active {
   transition: opacity 2s;
 }

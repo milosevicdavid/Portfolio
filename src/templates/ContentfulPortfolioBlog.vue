@@ -80,7 +80,7 @@ import { Facebook, Twitter } from "vue-socialmedia-share";
 export default {
     data() {
         return {
-            url: this.$page.post.title,
+            url: `davidiansite.netlify.app.${path}`,
         };
     },
 

@@ -2,7 +2,7 @@
   <div class="header">
     <div class="logo">
       <g-link to="/">
-<g-image src="~/assets/bitmap.png" width="90"/>
+<g-image src="~/assets/bitmap.png" width="80"/>
       </g-link>
     </div>
     <div class="links">
@@ -46,6 +46,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .links {

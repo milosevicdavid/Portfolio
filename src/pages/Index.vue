@@ -12,7 +12,7 @@
                      <g-image
                         class="svg"
                         src="~/assets/cranium2.webp"
-                        width="240"
+                        width="230"
                      />
                   </span>
                   <div class="description-text">
@@ -38,7 +38,7 @@
                      <g-image
                         class="svg"
                         src="~/assets/notebook.png"
-                        width="240"
+                        width="230"
                      />
                   </span>
                   <div class="description-text">
@@ -110,7 +110,7 @@ export default {
    p {
       text-indent: 10%;
       font-size: 1.2rem;
-      margin: 2rem auto;
+      margin: 1rem auto;
       line-height: 1.5rem;
       word-spacing: 0.4rem;
    }
@@ -130,7 +130,8 @@ export default {
          animation-timing-function: ease-out;
       }
       font-size: 3rem;
-   }
+
+     }
 }
 
 .description-text {
@@ -159,14 +160,16 @@ export default {
          animation-name: moveInRight;
          animation-duration: 2s;
          animation-timing-function: ease-out;
+         text-align: center;
       }
-   }
+     }
 
    @media (max-width: 576px) {
       border-top: 2px solid #2e8b57;
       border-left: none;
       width: 100%;
       height: 100vh;
+      
    }
 }
 
@@ -174,6 +177,9 @@ export default {
    margin: 1rem auto;
 }
 
+.gray-icon {
+   margin: 1rem auto;
+}
 .center {
    cursor: pointer;
    display: flex;
@@ -181,11 +187,10 @@ export default {
    justify-content: space-evenly;
    align-items: center;
    flex-direction: column;
-   height: 650px;
 
    @media (max-width: 576px) {
       p {
-         font-size: 1rem;
+         font-size: 0.9rem;
          word-spacing: 0.2rem;
       }
       width: 70vw;

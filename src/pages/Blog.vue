@@ -228,7 +228,6 @@ export default {
     padding: 2rem;
     max-width: 350px;
     min-width: 350px;
-    height: 600px;
     transition: transform .4s ease-in;
 
     &:hover {

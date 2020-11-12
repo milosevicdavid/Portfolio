@@ -10,10 +10,45 @@
                     width="135"
                 />
 
-                <p>
-                    Share:
-                </p>
-                
+                <p>Share:</p>
+                <ShareNetwork
+                    network="facebook"
+                    :url="url"
+                    title="Welcome to Davidian Blog "
+                    description="Technology, web development..."
+                    hashtags="technology, news"
+                >
+                    Share on Facebook
+                </ShareNetwork>
+                <ShareNetwork
+                    network="twitter"
+                    :url="url"
+                    title="Welcome to Davidian Blog "
+                    description="Technology, web development..."
+                    hashtags="technology, news"
+                >
+                    Share on Twitter
+                </ShareNetwork>
+                <ShareNetwork
+                    network="linkedin"
+                    :url="url"
+                    title="Welcome to Davidian Blog "
+                    description="Technology, web development..."
+                    hashtags="technology, news"
+                >
+                    Share on Linkedin
+                </ShareNetwork>
+                <ShareNetwork
+                    network="whatsapp"
+                    :url="url"
+                    title="Welcome to Davidian Blog "
+                    description="Technology, web development..."
+                    hashtags="technology, news"
+                >
+                    Share on Whatsapp
+                </ShareNetwork>
+
+
                 <p class="posted">Posted on {{ $page.post.date }}</p>
                 <div id="body" class="blog-text" v-html="body" />
             </div>
@@ -40,10 +75,20 @@
 
 <script>
 import MarkdownIt from "markdown-it";
-
+import { Facebook, Twitter } from "vue-socialmedia-share";
 
 export default {
-      
+    data() {
+        return {
+            url: this.$page.post.title,
+        };
+    },
+
+    components: {
+        Facebook,
+        Twitter,
+    },
+
     metaInfo() {
         return {
             title: this.$page.post.title,
@@ -55,12 +100,9 @@ export default {
 
             return md.render(this.$page.post.body);
         },
-
-           },
+    },
 };
 </script>
-
-
 
 <style lang="scss">
 .container {

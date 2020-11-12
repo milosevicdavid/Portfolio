@@ -262,8 +262,9 @@ export default {
 }
 
 .pages {
-    padding-top: 1rem;
-    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+        text-align: center;
     font-size: 1.5rem;
     a {
         padding: 1rem;

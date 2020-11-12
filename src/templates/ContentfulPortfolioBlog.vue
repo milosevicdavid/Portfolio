@@ -181,6 +181,10 @@ export default {
 .social-share {
     display: flex;
     margin-top: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
 }
 
 .circle {
@@ -192,7 +196,17 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer
+    transition: transform .5s ease-in;
+
+        &:hover {
+            transform: translateY(-0.3rem); 
+        }
+
+
+    .icon {
+        line-height: 0;
+        padding: 0.5rem;
+    } 
 }
 
 </style>

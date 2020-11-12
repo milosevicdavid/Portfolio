@@ -16,7 +16,7 @@
 
                 <ShareNetwork
                     network="facebook"
-                    :url= "`davidiansite.netlify.app${$page.post.path}`"
+                    :url= "`${website}${$page.post.path}`"
                     title="Welcome to Davidian Blog "
                     description="Technology, web development..."
                     hashtags="technology,webdev"
@@ -33,7 +33,7 @@
                 </ShareNetwork>
                 <ShareNetwork
                     network="twitter"
-                    :url= "`davidiansite.netlify.app${$page.post.path}`"
+                    :url= "`${website}${$page.post.path}`"
                     title="Welcome to Davidian Blog "
                     description="Technology, web development..."
                     hashtags="technology,webdev"
@@ -50,7 +50,7 @@
                 </ShareNetwork>
                 <ShareNetwork
                     network="linkedin"
-                    :url= "`davidiansite.netlify.app${$page.post.path}`"
+                    :url= "`${website}${$page.post.path}`"
                     title="Welcome to Davidian Blog "
                     description="Technology, web development..."
                     hashtags="technology,webdev"
@@ -67,7 +67,7 @@
                 </ShareNetwork>
                 <ShareNetwork
                     network="whatsapp"
-                    :url= "`davidiansite.netlify.app${$page.post.path}`"
+                    :url= "`${website}${$page.post.path}`"
                     title="Welcome to Davidian Blog "
                     description="Technology, web development..."
                     hashtags="technology,webdev"
@@ -111,15 +111,16 @@
 
 <script>
 import MarkdownIt from "markdown-it";
-import { Facebook, Twitter } from "vue-socialmedia-share";
 
 export default {
-   
-    components: {
-        Facebook,
-        Twitter,
-    },
 
+    data() {
+        return {
+            website: "davidiansite.netlify.app"
+        }
+    },
+   
+   
     metaInfo() {
         return {
             title: this.$page.post.title,
@@ -131,6 +132,9 @@ export default {
 
             return md.render(this.$page.post.body);
         },
+        url() {
+            return `davidiansite.netlify.app${$page.post.path}`
+        }
            },
 
    // mounted:  function() {

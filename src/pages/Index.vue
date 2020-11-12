@@ -46,7 +46,7 @@
                         Discover the latest news in tech and web development in
                         this articles section! The most fresh knowledge about
                         all kinds of technologies I am involved in. Some of the
-                        titles are:
+                        titles are...
                      </p>
                   </div>
                </div>

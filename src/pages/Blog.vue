@@ -3,7 +3,7 @@
     <div class="height-wrapper">
     <Header/>
         <h1 class="title">Blog</h1>
-        <div>
+        <div class="wrapper">
             <div class="icons">
                 <span class="circle-icon">
                     <vue-fontawesome
@@ -229,6 +229,7 @@ export default {
     max-width: 350px;
     min-width: 350px;
     transition: transform .4s ease-in;
+    max-height: 550px;
 
     &:hover {
         transform: scale(1.05);
@@ -273,6 +274,11 @@ export default {
     }
 }
 
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin: auto 2rem;
+}
 
 .icons {
     display: flex;

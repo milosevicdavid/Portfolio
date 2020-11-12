@@ -2,7 +2,7 @@
   <div class="header">
     <div class="logo">
       <g-link to="/">
-<g-image src="~/assets/bitmap.png" width="80"/>
+<g-image src="~/assets/dt.png" />
       </g-link>
     </div>
     <div class="links">
@@ -32,21 +32,30 @@
   border-bottom: 1px solid #2e8b57;
   margin-bottom: 0;
 
-  
-
 
   @media (max-width: 576px) {
     flex-direction: column;
+    height: 160px;
   }
 }
 
 
 .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
   margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-radius: 100%;
+  width: 110px;
+  height: 110px;
+
+  img {
+    width: 100%;
+  }
+
+  @media (max-width: 576px) {
+  margin-bottom: 0;
+  }
 }
 
 .links {
@@ -64,7 +73,7 @@ a:hover {
 }
 
 .page-links {
-  padding: 2rem;
+  padding: 1rem;
 
   @media (max-width: 576px) {
     padding: 0.5rem;

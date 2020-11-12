@@ -200,7 +200,7 @@ export default {
 
 .title {
     text-align: center;
-    margin-left: 2rem;
+    margin-top: 2rem;
 }
 
 .container {

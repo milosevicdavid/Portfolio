@@ -11,42 +11,78 @@
                 />
 
                 <p>Share:</p>
+                
+                <div class="social-share">
+
                 <ShareNetwork
                     network="facebook"
-                    :url="url"
+                    :url= "`davidiansite.netlify.app${$page.post.path}`"
                     title="Welcome to Davidian Blog "
                     description="Technology, web development..."
-                    hashtags="technology, news"
+                    hashtags="technology,webdev"
                 >
-                    Share on Facebook
+                    <span class="circle">
+                    <vue-fontawesome
+                        class="icon"
+                        icon="facebook"
+                        size="1.5"
+                        color="#2E8B57"
+                    ></vue-fontawesome>
+                </span>
+
                 </ShareNetwork>
                 <ShareNetwork
                     network="twitter"
-                    :url="url"
+                    :url= "`davidiansite.netlify.app${$page.post.path}`"
                     title="Welcome to Davidian Blog "
                     description="Technology, web development..."
-                    hashtags="technology, news"
+                    hashtags="technology,webdev"
                 >
-                    Share on Twitter
+                    <span class="circle">
+                    <vue-fontawesome
+                        class="icon"
+                        icon="twitter"
+                        size="1.5"
+                        color="#2E8B57"
+                    ></vue-fontawesome>
+                </span>
+
                 </ShareNetwork>
                 <ShareNetwork
                     network="linkedin"
-                    :url="url"
+                    :url= "`davidiansite.netlify.app${$page.post.path}`"
                     title="Welcome to Davidian Blog "
                     description="Technology, web development..."
-                    hashtags="technology, news"
+                    hashtags="technology,webdev"
                 >
-                    Share on Linkedin
+                    <span class="circle">
+                    <vue-fontawesome
+                        class="icon"
+                        icon="linkedin"
+                        size="1.5"
+                        color="#2E8B57"
+                    ></vue-fontawesome>
+                </span>
+
                 </ShareNetwork>
                 <ShareNetwork
                     network="whatsapp"
-                    :url="url"
+                    :url= "`davidiansite.netlify.app${$page.post.path}`"
                     title="Welcome to Davidian Blog "
                     description="Technology, web development..."
-                    hashtags="technology, news"
+                    hashtags="technology,webdev"
                 >
-                    Share on Whatsapp
+                    <span class="circle">
+                    <vue-fontawesome
+                        class="icon"
+                        icon="whatsapp"
+                        size="1.5"
+                        color="#2E8B57"
+                    ></vue-fontawesome>
+                </span>
+
                 </ShareNetwork>
+                </div>
 
 
                 <p class="posted">Posted on {{ $page.post.date }}</p>
@@ -78,12 +114,7 @@ import MarkdownIt from "markdown-it";
 import { Facebook, Twitter } from "vue-socialmedia-share";
 
 export default {
-    data() {
-        return {
-            url: `davidiansite.netlify.app.${path}`,
-        };
-    },
-
+   
     components: {
         Facebook,
         Twitter,
@@ -100,7 +131,12 @@ export default {
 
             return md.render(this.$page.post.body);
         },
-    },
+           },
+
+   // mounted:  function() {
+   //     return  console.log(this.$page)
+   // }
+ 
 };
 </script>
 
@@ -142,4 +178,17 @@ export default {
     display: flex;
     margin-top: 0.5rem;
 }
+
+.circle {
+    margin: 1rem;
+    border: 1px solid #2e8b57;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer
+}
+
 </style>

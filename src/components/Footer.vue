@@ -7,7 +7,7 @@
                     class="icon"
                     icon="github"
                     size="2"
-                    color="#2E8B57"
+                    color="wheat"
                 ></vue-fontawesome>
             </span>
             <span class="circle-icon">
@@ -15,7 +15,7 @@
                     class="icon"
                     icon="instagram"
                     size="2"
-                    color="#2E8B57"
+                    color="wheat"
                 ></vue-fontawesome>
             </span>
             <span class="circle-icon">
@@ -23,7 +23,7 @@
                     class="icon"
                     icon="linkedin"
                     size="2"
-                    color="#2E8B57"
+                    color="wheat"
                 ></vue-fontawesome>
             </span>
             <span class="circle-icon">
@@ -31,7 +31,7 @@
                     class="icon"
                     icon="envelope"
                     size="2"
-                    color="#2E8B57"
+                    color="wheat"
                 ></vue-fontawesome>
             </span>
         </div>

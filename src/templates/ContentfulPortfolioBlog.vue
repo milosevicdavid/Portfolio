@@ -136,15 +136,11 @@ export default {
             return `davidiansite.netlify.app${$page.post.path}`
         }
            },
-
-   // mounted:  function() {
-   //     return  console.log(this.$page)
-   // }
- 
 };
 </script>
 
 <style lang="scss">
+           
 .container {
     margin-top: 2rem;
     color: white;

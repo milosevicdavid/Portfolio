@@ -1,48 +1,74 @@
 <template>
-  <div class="header">
-    <div class="logo">
-      <g-link to="/">
-<g-image src="~/assets/dt.png" />
-      </g-link>
+  <div class="header-wrapper">
+    <div class="header">
+      <div class="logo">
+        <g-link to="/">
+  <g-image src="~/assets/dt.png" />
+        </g-link>
+      </div>
+      <div class="links">
+        <span class="page-links">
+          <g-link to="/about">About Me</g-link>
+        </span>
+        <span class="page-links">
+         <g-link to="/contact">Contact</g-link>
+        </span>
+        <span class="page-links">
+          <g-link to="/blog">Blog</g-link>
+        </span>
+      </div>
     </div>
-    <div class="links">
-      <span class="page-links">
-        <g-link to="/about">About Me</g-link>
-      </span>
-      <span class="page-links">
-       <g-link to="/contact">Contact</g-link>
-      </span>
-      <span class="page-links">
-        <g-link to="/blog">Blog</g-link>
-      </span>
+    <div class="quote">
+      <p>{{ quote[0] }} <span class="white-you">{{ quote[1] }}</span></p>
+      <p>{{ quote[2] }}</p>
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  props: {
+    quote: {
+      type: Array,
+      required: true
+    },
+     }
+}
+</script>
 
 <style lang="scss">
+
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  border-bottom: 1px solid #2e8b57;
+  height: 400px;
+
+  @media (max-width: 576px) {
+    height: 100vh;
+  }
+}
+
 .header {
   font-size: 1.2rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 120px;
   width: 100%;
-  border-bottom: 1px solid #2e8b57;
-  margin-bottom: 0;
+  margin-top: 30px;
 
 
   @media (max-width: 576px) {
     flex-direction: column;
-    height: 160px;
+    
   }
 }
 
 
 .logo {
   
-  margin-top: 1rem;
+  margin-top: 5rem;
   text-align: center;
   margin-bottom: 1.5rem;
   border-radius: 100%;
@@ -58,7 +84,27 @@
   }
 }
 
+.quote {
+  margin-left: 4rem;
+  margin-top: 4rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3rem;
+
+  @media (max-width: 576px) {
+    margin-top: 8rem;
+    margin-left: 2rem;
+    line-height: 4rem;
+  }
+}
+
+.white-you {
+  color: wheat;
+}
+
+
 .links {
+  margin-top: 3rem;
   padding: 1rem auto;
   display: flex;
   justify-content: center;
@@ -66,7 +112,7 @@
   cursor: pointer;
 
 a:hover { 
-  color: white;
+  color: wheat;
   border-bottom: 1px solid white;
   }
 

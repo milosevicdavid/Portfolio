@@ -1,6 +1,7 @@
 <template>
    <Landing>
-      <Header />
+   <div class="index_all">
+      <Header :quote="quoteText"/>
       <div class="index_wrapper">
          <div class="index_left">
             <g-link to="/about/">
@@ -54,6 +55,7 @@
          </div>
       </div>
       <Footer/>
+      </div>
    </Landing>
 </template>
 
@@ -70,27 +72,30 @@ export default {
       title: "Welcome!",
    },
    layout: "Landing",
+
+   
+      data(){
+         return {
+            quoteText: ["CODE DEVELOPS", "YOU","MODULE BY MODULE"],
+                     }
+   }
 };
 </script>
 
 <style lang="scss">
+
+.index_all {
+   background-image: url(../assets/workstation.png);
+   background-size: cover;
+}
+
 .index_wrapper {
    display: flex;
    font-weight: 600;
    color: #2e8b57;
+   background-image: url(../assets/workstation.png);
+   background-size: cover;
 
-   &::before {
-      content: "";
-      background-image: url(../assets/workstation.png);
-      background-size: cover;
-      opacity: 0.017;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      z-index: -1;
-   }
 
    @media (max-width: 576px) {
       flex-direction: column;
@@ -99,13 +104,13 @@ export default {
    }
 }
 .index_left {
-   height: calc(100vh - 240px);
+   height: calc(100vh - 400px);
    width: 50%;
    display: flex;
    flex-direction: column;
    justify-content: space-around;
    align-items: center;
-   border-right: 2px solid #2e8b57;
+   border-right: 1px solid #2e8b57;
 
    p {
       text-indent: 10%;
@@ -119,8 +124,8 @@ export default {
       width: 100%;
       border-right: none;
       height: 100vh;
-   }
-
+      }
+  
    .title {
       margin: 1rem auto;
 
@@ -144,9 +149,9 @@ export default {
 }
 
 .index-right {
-   height: calc(100vh - 240px);
+   height: calc(100vh - 400px);
    display: flex;
-   border-left: 2px solid #2e8b57;
+   border-left: 1px solid #2e8b57;
    justify-content: center;
    align-items: center;
    width: 50%;
@@ -175,10 +180,20 @@ export default {
 
 .icon-gray {
    margin: 1rem auto;
-}
+   @media (max-width: 1024px) {
+      img {
+         width: 140px;
+      }
+   }
+  }
 
 .gray-icon {
    margin: 1rem auto;
+   @media (max-width: 1024px) {
+      img {
+         width: 140px;
+      }
+   }
 }
 .center {
    cursor: pointer;

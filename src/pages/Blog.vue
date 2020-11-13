@@ -1,8 +1,7 @@
 <template>
     <Landing>
     <div class="height-wrapper">
-    <Header/>
-        <h1 class="title">Blog</h1>
+    <Header :quote="quoteText"/>
         <div class="wrapper">
             <div class="icons">
                 <span class="circle-icon">
@@ -76,6 +75,9 @@
                                         <h2>
                                             {{ node.title }}
                                         </h2>
+                                        <span class="preview">
+                                            {{ node.preview }}
+                                        </span>
                                         <p>
                                             {{ node.description }}
                                         </p>
@@ -105,10 +107,10 @@
 </template>
 
 <page-query>
-     query Posts($page: Int) { posts: allContentfulPortfolioBlog(sortBy: "date", order: DESC, perPage: 4, page: $page)
+     query Posts($page: Int) { posts: allContentfulPortfolioBlog(sortBy: "date", order: DESC, perPage: 8, page: $page)
     @paginate { totalCount pageInfo { totalPages
   currentPage } 
-    edges { node { id, path, image { file { url } }, title, body, date (format:
+    edges { node { id, path, image { file { url } }, title, preview,  body, date (format:
   "MMMM D, Y") } } } }
 </page-query>
 
@@ -133,6 +135,7 @@ export default {
             loading: false,
             loadingTime: 0,
             maxLoadingTime: 3,
+            quoteText: ["BLOG TO KEEP", "YOU", "UP TO DATE"]
         };
     },
     watch: {
@@ -176,24 +179,17 @@ export default {
 
 <style scoped lang="scss">
 
+
+    
 .height-wrapper {
-&::before {
-      content: "";
-      background-image: url(../assets/workstation.png);
-      background-size: cover;
-      opacity: 0.017;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      z-index: -1;
-   }
+
+    height: 100%;
+    background-image: url(../assets/workstation.png);
+    background-size: cover;
+
 
    @media (max-width: 576px) {
       flex-direction: column;
-      background-image: url(../assets/workstation2.png);
-      background-size: cover;
    }
 }
 
@@ -203,10 +199,16 @@ export default {
     margin-top: 2rem;
 }
 
+.preview {
+    font-size: 12px;
+}
+
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding-right: 2rem;
+    max-width: 1500px;
+    flex-wrap: wrap;
     img {
         width: 100%;
     }
@@ -225,16 +227,8 @@ export default {
 }
 
 .single-post {
-    padding: 2rem;
     max-width: 350px;
-    min-width: 350px;
-    transition: transform .4s ease-in;
-    max-height: 550px;
-
-    &:hover {
-        transform: scale(1.05);
-      }
-
+    min-width: 250px;
 }
 
 .blog {
@@ -277,7 +271,7 @@ export default {
 
 .wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin: auto 2rem;
 }
 
@@ -286,7 +280,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
     height: 300px;
     position: -webkit-sticky;
     position: sticky;
@@ -308,4 +301,7 @@ export default {
     justify-content: center;
     align-items: center;
 }
+
+
+
 </style>

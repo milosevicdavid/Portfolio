@@ -190,6 +190,7 @@ export default {
 
    @media (max-width: 576px) {
       flex-direction: column;
+    background-image: url(../assets/workstation2.png);
    }
 }
 

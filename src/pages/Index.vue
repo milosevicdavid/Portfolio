@@ -72,18 +72,21 @@ export default {
 .index_all {
    background-image: url(../assets/workstation.png);
    background-size: cover;
+
+   @media (max-width: 576px) {
+      background-image: url(../assets/workstation2.png);
+      background-size: cover;
+   }
 }
 
 .index_wrapper {
    display: flex;
    font-weight: 600;
    color: #2e8b57;
-   background-image: url(../assets/workstation.png);
    background-size: cover;
 
    @media (max-width: 576px) {
       flex-direction: column;
-      background-image: url(../assets/workstation2.png);
       background-size: cover;
    }
 }
@@ -151,7 +154,7 @@ export default {
    }
    .title {
       margin-bottom: 1rem;
-      
+
       h1 {
          font-size: 3rem;
          font-weight: 700;
@@ -218,6 +221,4 @@ export default {
       transform: translate(0);
    }
 }
-
-
 </style>

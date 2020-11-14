@@ -3,7 +3,7 @@
     <div class="header">
       <div class="logo">
         <g-link to="/">
-          <g-image src="~/assets/dt.png" />
+          <img src="../assets/dt.png" />
         </g-link>
       </div>
       <div class="links">
@@ -105,7 +105,7 @@ export default {
 }
 
 .last-quote {
-  animation: fadeInThird 3s ease-in;
+  animation: fadeInThird 2.8s ease-in;
 }
 
 .links {

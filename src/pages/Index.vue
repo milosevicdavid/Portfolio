@@ -190,7 +190,7 @@ export default {
 .center {
    cursor: pointer;
    display: flex;
-   width: 30vw;
+   width: 25vw;
    justify-content: space-evenly;
    align-items: center;
    flex-direction: column;

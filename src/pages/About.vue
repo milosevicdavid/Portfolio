@@ -1,5 +1,6 @@
 <template>
   <Landing>
+  <h1>Get to know ME a little better</h1>
   <div class="icon-container">
     <div class="icon-row">
       <span class="icon-t">

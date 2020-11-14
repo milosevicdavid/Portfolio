@@ -23,7 +23,7 @@ body {
 margin: 0 auto;
 }
 .fade-enter-active {
-  transition: opacity 2s;
+  transition: opacity 1s;
 }
 
 .fade-enter {

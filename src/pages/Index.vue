@@ -116,7 +116,7 @@ export default {
       h1 {
          font-size: 3rem;
          font-weight: 700;
-         animation-name: moveInLeft;
+         animation-name: moveInUp;
          animation-duration: 2s;
          animation-timing-function: ease-out;
       }
@@ -155,7 +155,7 @@ export default {
       h1 {
          font-size: 3rem;
          font-weight: 700;
-         animation-name: moveInRight;
+         animation-name: moveInDown;
          animation-duration: 2s;
          animation-timing-function: ease-out;
          text-align: center;
@@ -170,23 +170,6 @@ export default {
    }
 }
 
-.icon-gray {
-   margin: 1rem auto;
-   @media (max-width: 1024px) {
-      img {
-         width: 140px;
-      }
-   }
-}
-
-.gray-icon {
-   margin: 1rem auto;
-   @media (max-width: 1024px) {
-      img {
-         width: 140px;
-      }
-   }
-}
 .center {
    cursor: pointer;
    display: flex;
@@ -208,7 +191,7 @@ export default {
    }
 }
 
-@keyframes moveInLeft {
+@keyframes moveInUp {
    0% {
       opacity: 0;
       transform: translateY(-10rem);
@@ -222,7 +205,7 @@ export default {
    }
 }
 
-@keyframes moveInRight {
+@keyframes moveInDown {
    0% {
       opacity: 0;
       transform: translateY(10rem);
@@ -235,4 +218,6 @@ export default {
       transform: translate(0);
    }
 }
+
+
 </style>

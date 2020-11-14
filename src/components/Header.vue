@@ -3,7 +3,7 @@
     <div class="header">
       <div class="logo">
         <g-link to="/">
-  <g-image src="~/assets/dt.png" />
+          <g-image src="~/assets/dt.png" />
         </g-link>
       </div>
       <div class="links">
@@ -11,7 +11,7 @@
           <g-link to="/about">About Me</g-link>
         </span>
         <span class="page-links">
-         <g-link to="/contact">Contact</g-link>
+          <g-link to="/contact">Contact</g-link>
         </span>
         <span class="page-links">
           <g-link to="/blog">Blog</g-link>
@@ -19,8 +19,10 @@
       </div>
     </div>
     <div class="quote">
-      <p>{{ quote[0] }} <span class="white-you">{{ quote[1] }}</span></p>
-      <p>{{ quote[2] }}</p>
+      <span class="first-quote">{{ quote[0] }} </span>
+      <span class="white-quote">{{ quote[1] }}</span>
+      <br />
+      <span class="last-quote">{{ quote[2] }}</span>
     </div>
   </div>
 </template>
@@ -30,14 +32,13 @@ export default {
   props: {
     quote: {
       type: Array,
-      required: true
+      required: true,
     },
-     }
-}
+  },
+};
 </script>
 
 <style lang="scss">
-
 .header-wrapper {
   display: flex;
   flex-direction: column;
@@ -58,16 +59,12 @@ export default {
   width: 100%;
   margin-top: 30px;
 
-
   @media (max-width: 576px) {
     flex-direction: column;
-    
   }
 }
 
-
 .logo {
-  
   margin-top: 5rem;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -80,7 +77,7 @@ export default {
   }
 
   @media (max-width: 576px) {
-  margin-bottom: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -98,10 +95,18 @@ export default {
   }
 }
 
-.white-you {
+.first-quote {
+  animation: fadeInFirst 2s ease-in;
+}
+
+.white-quote {
+  animation: fadeInSecond 2s ease-in;
   color: wheat;
 }
 
+.last-quote {
+  animation: fadeInThird 3s ease-in;
+}
 
 .links {
   margin-top: 3rem;
@@ -112,11 +117,10 @@ export default {
   cursor: pointer;
   font-size: 1.5rem;
 
-a:hover { 
-  color: wheat;
-  border-bottom: 1px solid white;
+  a:hover {
+    color: wheat;
+    border-bottom: 1px solid white;
   }
-
 }
 
 .page-links {
@@ -124,6 +128,46 @@ a:hover {
 
   @media (max-width: 576px) {
     padding: 0.5rem;
+  }
+}
+
+@keyframes fadeInFirst {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInSecond {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInThird {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>

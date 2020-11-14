@@ -107,7 +107,7 @@
 </template>
 
 <page-query>
-     query Posts($page: Int) { posts: allContentfulPortfolioBlog(sortBy: "date", order: DESC, perPage: 8, page: $page)
+     query Posts($page: Int) { posts: allContentfulPortfolioBlog(sortBy: "date", order: DESC, perPage: 3, page: $page)
     @paginate { totalCount pageInfo { totalPages
   currentPage } 
     edges { node { id, path, image { file { url } }, title, preview,  body, date (format:

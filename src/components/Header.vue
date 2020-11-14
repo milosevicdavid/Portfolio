@@ -92,7 +92,7 @@ export default {
   line-height: 3rem;
 
   @media (max-width: 576px) {
-    margin-top: 8rem;
+    margin-top: 7rem;
     margin-left: 2rem;
     line-height: 4rem;
   }

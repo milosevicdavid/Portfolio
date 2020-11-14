@@ -205,9 +205,9 @@ export default {
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-right: 2rem;
-    max-width: 1500px;
+    max-width: 1280px;
     flex-wrap: wrap;
     img {
         width: 100%;
@@ -272,7 +272,7 @@ export default {
 .wrapper {
     display: flex;
     justify-content: space-between;
-    margin: auto 2rem;
+    margin: auto 1rem;
 }
 
 .icons {

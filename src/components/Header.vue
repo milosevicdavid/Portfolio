@@ -110,6 +110,7 @@ export default {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-size: 1.5rem;
 
 a:hover { 
   color: wheat;

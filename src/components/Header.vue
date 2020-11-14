@@ -6,7 +6,7 @@
           <img src="../assets/dt.png" />
         </g-link>
       </div>
-      <div class="links">
+      <header class="links">
         <span class="page-links">
           <g-link to="/about">About Me</g-link>
         </span>
@@ -16,13 +16,15 @@
         <span class="page-links">
           <g-link to="/blog">Blog</g-link>
         </span>
-      </div>
+      </header>
     </div>
     <div class="quote">
-      <span class="first-quote">{{ quote[0] }} </span>
-      <span class="white-quote">{{ quote[1] }}</span>
-      <br />
-      <span class="last-quote">{{ quote[2] }}</span>
+      <h1>
+        <span class="first-quote">{{ quote[0] }} </span>
+        <span class="white-quote">{{ quote[1] }}</span>
+        <br />
+        <span class="last-quote">{{ quote[2] }}</span>
+      </h1>
     </div>
   </div>
 </template>
@@ -88,6 +90,11 @@ export default {
   font-weight: 700;
   line-height: 3rem;
 
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
   @media (max-width: 576px) {
     margin-top: 7rem;
     margin-left: 2rem;
@@ -116,6 +123,9 @@ export default {
   align-items: center;
   cursor: pointer;
   font-size: 1.5rem;
+  animation-name: MoveInUp;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
 
   a:hover {
     color: wheat;
@@ -170,4 +180,20 @@ export default {
     opacity: 1;
   }
 }
+
+
+@keyframes MoveInUp {
+   0% {
+      opacity: 0;
+      transform: translateY(-10rem);
+   }
+   80% {
+      transform: translateY(1rem);
+   }
+   100% {
+      opacity: 1;
+      transform: translate(0);
+   }
+}
+
 </style>

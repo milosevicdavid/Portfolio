@@ -7,7 +7,7 @@
                <g-link to="/about/">
                   <div class="center">
                      <div class="title">
-                        <h1>PORTFOLIO</h1>
+                        <h2>PORTFOLIO</h2>
                      </div>
                      <div class="description-text">
                         <p>
@@ -27,7 +27,7 @@
                <g-link to="/blog/">
                   <div class="center">
                      <div class="title">
-                        <h1>TECHNOLOGY <span class="white-blog">BLOG</span></h1>
+                        <h2>TECHNOLOGY <span class="white-blog">BLOG</span></h2>
                      </div>
                      <div class="description-text">
                         <p>
@@ -116,7 +116,7 @@ export default {
    .title {
       margin: 1rem;
 
-      h1 {
+      h2 {
          font-size: 3rem;
          font-weight: 700;
          animation-name: moveInUp;
@@ -155,7 +155,7 @@ export default {
    .title {
       margin-bottom: 1rem;
 
-      h1 {
+      h2 {
          font-size: 3rem;
          font-weight: 700;
          animation-name: moveInDown;

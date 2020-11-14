@@ -67,9 +67,9 @@
                                     <g-image
                                         alt="Example image"
                                         :src="node.image.file.url"
-                                        blur="70"
-                                        width="135"
-                                        height="30"
+                                        
+                                        
+                                        
                                     />
                                     <div class="description">
                                         <h2>
@@ -227,15 +227,17 @@ export default {
     }
 }
 
-.single-post {
-    max-width: 350px;
-    min-width: 250px;
-}
 
 .blog {
     margin-bottom: 2rem;
+    margin-top: 2rem;
     border-radius: 1rem;
     color: black;
+    width: 350px;
+
+    @media (max-width: 576px) {
+        width: 270px;
+    }
 
     img {
         border-radius: 1rem 1rem 0 0;

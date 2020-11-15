@@ -1,108 +1,113 @@
 <template>
     <Landing>
-    <div class="height-wrapper">
-    <Header :quote="quoteText"/>
-        <div class="wrapper">
-            <div class="icons">
-                <span class="circle-icon">
-                    <vue-fontawesome
-                        class="icon"
-                        icon="github"
-                        size="1.5"
-                        color="#2E8B57"
-                    ></vue-fontawesome>
-                </span>
-                <span class="circle-icon">
-                    <vue-fontawesome
-                        class="icon"
-                        icon="instagram"
-                        size="1.5"
-                        color="#2E8B57"
-                    ></vue-fontawesome>
-                </span>
-                <span class="circle-icon">
-                    <vue-fontawesome
-                        class="icon"
-                        icon="linkedin"
-                        size="1.5"
-                        color="#2E8B57"
-                    ></vue-fontawesome>
-                </span>
-                <span class="circle-icon">
-                    <vue-fontawesome
-                        class="icon"
-                        icon="envelope"
-                        size="1.4"
-                        color="#2E8B57"
-                    ></vue-fontawesome>
-                </span>
-            </div>
+        <div class="height-wrapper">
+            <Header :quote="quoteText" />
+            <div class="wrapper">
+                <div class="icons">
+                    <span class="circle-icon">
+                        <vue-fontawesome
+                            class="icon"
+                            icon="github"
+                            size="1.5"
+                            color="#2E8B57"
+                        ></vue-fontawesome>
+                    </span>
+                    <span class="circle-icon">
+                        <vue-fontawesome
+                            class="icon"
+                            icon="instagram"
+                            size="1.5"
+                            color="#2E8B57"
+                        ></vue-fontawesome>
+                    </span>
+                    <span class="circle-icon">
+                        <vue-fontawesome
+                            class="icon"
+                            icon="linkedin"
+                            size="1.5"
+                            color="#2E8B57"
+                        ></vue-fontawesome>
+                    </span>
+                    <span class="circle-icon">
+                        <vue-fontawesome
+                            class="icon"
+                            icon="envelope"
+                            size="1.4"
+                            color="#2E8B57"
+                        ></vue-fontawesome>
+                    </span>
+                </div>
 
-            <div class="container">
-                <span
-                    class="single-post"
-                    v-for="{ node } in $page.posts.edges"
-                    :key="node.id"
-                >
-                    <g-link :to="node.path">
-                        <div class="blog">
-                            <b-skeleton-wrapper :loading="loading">
-                                <template v-slot:loading>
-                                    <b-card>
-                                        <b-skeleton-img
-                                            card-img="top"
-                                            aspect="1:1"
-                                        ></b-skeleton-img>
-                                        <br />
-                                        <b-skeleton width="85%"></b-skeleton>
-                                        <b-skeleton width="55%"></b-skeleton>
-                                        <b-skeleton width="70%"></b-skeleton>
-                                        <b-skeleton width="85%"></b-skeleton>
-                                        <b-skeleton width="55%"></b-skeleton>
-                                        <b-skeleton width="70%"></b-skeleton>
-                                    </b-card>
-                                </template>
-                                <br />
-                                <div class="b-card">
-                                    <g-image
-                                        alt="Example image"
-                                        :src="node.image.file.url"
-                                        
-                                        
-                                        
-                                    />
-                                    <div class="description">
-                                        <h2>
-                                            {{ node.title }}
-                                        </h2>
-                                        <span class="preview">
-                                            {{ node.preview }}
-                                        </span>
-                                        <p>
-                                            {{ node.description }}
-                                        </p>
-                                        <p class="date">
-                                            Posted on {{ node.date }}
-                                        </p>
-                                        <p>Read More...</p>
+                <div class="container">
+                    <span
+                        class="single-post"
+                        v-for="{ node } in $page.posts.edges"
+                        :key="node.id"
+                    >
+                        <g-link :to="node.path">
+                            <div class="blog">
+                                <b-skeleton-wrapper :loading="loading">
+                                    <template v-slot:loading>
+                                        <b-card>
+                                            <b-skeleton-img
+                                                card-img="top"
+                                                aspect="1:1"
+                                            ></b-skeleton-img>
+                                            <br />
+                                            <b-skeleton
+                                                width="85%"
+                                            ></b-skeleton>
+                                            <b-skeleton
+                                                width="55%"
+                                            ></b-skeleton>
+                                            <b-skeleton
+                                                width="70%"
+                                            ></b-skeleton>
+                                            <b-skeleton
+                                                width="85%"
+                                            ></b-skeleton>
+                                            <b-skeleton
+                                                width="55%"
+                                            ></b-skeleton>
+                                            <b-skeleton
+                                                width="70%"
+                                            ></b-skeleton>
+                                        </b-card>
+                                    </template>
+                                    <br />
+                                    <div class="b-card">
+                                        <g-image
+                                            alt="Example image"
+                                            :src="node.image.file.url"
+                                        />
+                                        <div class="description">
+                                            <div class="blog-title">
+                                                <h2>
+                                                    {{ node.title }}
+                                                </h2>
+                                            </div>
+                                            <p class="date">
+                                                Posted on {{ node.date }}
+                                            </p>
+                                            <p>Read More...</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </b-skeleton-wrapper>
-                        </div>
-                    </g-link>
-                </span>
+                                </b-skeleton-wrapper>
+                            </div>
+                        </g-link>
+                    </span>
+                </div>
             </div>
-        </div>
 
-        <div class="pages">
-            <Pager
-                class="pages"
-                v-if="$page.posts.pageInfo.totalPages > 1"
-                :info="$page.posts.pageInfo"
-            />
+            <div class="pages">
+                <Pager
+                    class="pages"
+                    v-if="$page.posts.pageInfo.totalPages > 1"
+                    :info="$page.posts.pageInfo"
+                />
+            </div>
+            <Footer />
         </div>
-        <Footer />
-    </div>
     </Landing>
 </template>
 
@@ -110,7 +115,7 @@
      query Posts($page: Int) { posts: allContentfulPortfolioBlog(sortBy: "date", order: DESC, perPage: 3, page: $page)
     @paginate { totalCount pageInfo { totalPages
   currentPage } 
-    edges { node { id, path, image { file { url } }, title, preview,  body, date (format:
+    edges { node { id, path, image { file { url } }, title, body, date (format:
   "MMMM D, Y") } } } }
 </page-query>
 
@@ -124,7 +129,6 @@ export default {
         Pager,
         Header,
         Footer,
-        
     },
     metaInfo: {
         title: "Blog",
@@ -135,7 +139,7 @@ export default {
             loading: false,
             loadingTime: 0,
             maxLoadingTime: 3,
-            quoteText: ["BLOG TO KEEP", "YOU", "UP TO DATE"]
+            quoteText: ["BLOG TO KEEP", "YOU", "UP TO DATE"],
         };
     },
     watch: {
@@ -178,31 +182,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-
-    
 .height-wrapper {
-
     height: 100%;
     background-image: url(../assets/workstation.png);
     background-size: cover;
 
-
-   @media (max-width: 576px) {
-      flex-direction: column;
-    background-image: url(../assets/workstation2.png);
-   }
+    @media (max-width: 576px) {
+        flex-direction: column;
+        background-image: url(../assets/workstation2.png);
+    }
 }
 
 
-.title {
-    text-align: center;
-    margin-top: 2rem;
+.blog-title {
+    color: wheat;
+    font-weight: 700;
+
+    h2 {
+
+    font-size: 2rem;
+    }
 }
 
-.preview {
-    font-size: 12px;
-}
 
 .container {
     display: flex;
@@ -227,11 +228,9 @@ export default {
     }
 }
 
-
 .blog {
     margin-bottom: 2rem;
     margin-top: 2rem;
-    border-radius: 1rem;
     color: black;
     width: 350px;
 
@@ -239,29 +238,24 @@ export default {
         width: 270px;
     }
 
-    img {
-        border-radius: 1rem 1rem 0 0;
+    &:hover {
+        border-bottom: 1px solid #2E8B57;
+        border-top: 1px solid #2E8B57;
     }
 }
+
+
 
 .description {
-    background-color: black;
     padding: 0.5rem;
     color: white;
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    &:hover {
-   background-color: #2e8b57;
-    }
-}
+   
+   }
 
 .pages {
     margin-top: 1rem;
     padding: 1rem;
-        text-align: center;
+    text-align: center;
     font-size: 1.5rem;
     a {
         padding: 1rem;
@@ -304,7 +298,4 @@ export default {
     justify-content: center;
     align-items: center;
 }
-
-
-
 </style>

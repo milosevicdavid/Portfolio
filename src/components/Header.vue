@@ -1,9 +1,10 @@
 <template>
+  <div class="header-container">
   <div class="header-wrapper">
     <div class="header">
       <div class="logo">
         <g-link to="/">
-          <img src="../assets/dt.png" />
+          <img src="../assets/dt2.png" />
         </g-link>
       </div>
       <header class="links">
@@ -27,6 +28,7 @@
       </h1>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -41,6 +43,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .header-wrapper {
   display: flex;
   flex-direction: column;
@@ -54,6 +57,7 @@ export default {
 }
 
 .header {
+  display: flex;
   font-size: 1.2rem;
   display: flex;
   justify-content: space-evenly;

@@ -1,11 +1,11 @@
 module.exports = {
   siteName: "Davidian",
 icon: {
-    favicon: './src/favicon.png',
-    touchicon: './src/favicon.png'
+    favicon: './src/assets/dt2.png',
+    touchicon: './src/assets/dt2.png'
   },
 touchicon: {
-      src: './src/favicon.png',
+      src: './src/assets/dt2.png',
       sizes: [76, 152, 120, 167],
       precomposed: true
     },

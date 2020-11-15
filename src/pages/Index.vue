@@ -97,12 +97,11 @@ export default {
    flex-direction: column;
    justify-content: space-around;
    align-items: center;
-   border-right: 1px solid #2e8b57;
 
    p {
+      margin: 1rem auto;
       text-indent: 10%;
       font-size: 1.2rem;
-      margin: 1rem auto;
       line-height: 1.5rem;
       word-spacing: 0.4rem;
    }
@@ -148,9 +147,9 @@ export default {
    width: 50%;
 
    p {
+      margin-top: 1rem;
       font-size: 1.2rem;
       word-spacing: 0.4rem;
-      margin-top: 1rem;
    }
    .title {
       margin-bottom: 1rem;
@@ -174,8 +173,8 @@ export default {
 }
 
 .center {
-   cursor: pointer;
    display: flex;
+   cursor: pointer;
    width: 25vw;
    justify-content: space-evenly;
    align-items: center;

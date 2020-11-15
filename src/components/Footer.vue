@@ -1,7 +1,10 @@
 <template>
+    <div>
     <div class="footer">
         <div class="copyright">Copyright @DavidianDesign 2020</div>
-        <div class="icons">
+   <div class="icons-wrap">        
+       <span class="connect">Connect with me:  </span>
+            <div class="icons">
             <span class="circle-icon">
                 <vue-fontawesome
                     class="icon"
@@ -35,33 +38,82 @@
                 ></vue-fontawesome>
             </span>
         </div>
+   </div>
+
+    </div>
+    <div class="tech">
+        <span>Website built using: </span>
+        <Tech />
+    </div>
     </div>
 </template>
 
-<script></script>
+<script>
+import Tech from "~/components/Tech";
+
+export default {
+    components: {
+        Tech,
+    },
+};
+</script>
 
 <style lang="scss">
 
-.footer {
+.icons-wrap {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+
+    @media (max-width: 576px) {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+
+
+.connect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+}
+
+.footer {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
     max-height: 120px;
     width: 100%;
     border-top: 1px solid #2e8b57;
+    
 
     @media (max-width: 576px) {
         flex-direction: column;
     }
 }
 
+
+
 .copyright {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    margin-right: 3rem;
+    font-weight: 700;
 }
 
+.tech {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .icons {
     display: flex;
@@ -73,4 +125,5 @@
 .circle-icon {
     padding: 1rem;
 }
+
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div>
     <div class="footer">
-        <div class="copyright">Copyright @DavidianDesign 2020</div>
+        <div class="copyright">Copyright © Davidian Tech {{ new Date().getFullYear() }}</div>
    <div class="icons-wrap">        
        <span class="connect">Connect with me:  </span>
             <div class="icons">
@@ -102,7 +102,6 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    margin-right: 3rem;
     font-weight: 700;
 }
 

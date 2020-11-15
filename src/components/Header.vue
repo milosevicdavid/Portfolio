@@ -1,33 +1,33 @@
 <template>
   <div class="header-container">
-  <div class="header-wrapper">
-    <div class="header">
-      <div class="logo">
-        <g-link to="/">
-          <img src="../assets/dt2.png" />
-        </g-link>
+    <div class="header-wrapper">
+      <div class="header">
+        <div class="logo">
+          <g-link to="/">
+            <img src="../assets/dt2.png" />
+          </g-link>
+        </div>
+        <header class="links">
+          <span class="page-links">
+            <g-link to="/about">About Me</g-link>
+          </span>
+          <span class="page-links">
+            <g-link to="/contact">Contact</g-link>
+          </span>
+          <span class="page-links">
+            <g-link to="/blog">Blog</g-link>
+          </span>
+        </header>
       </div>
-      <header class="links">
-        <span class="page-links">
-          <g-link to="/about">About Me</g-link>
-        </span>
-        <span class="page-links">
-          <g-link to="/contact">Contact</g-link>
-        </span>
-        <span class="page-links">
-          <g-link to="/blog">Blog</g-link>
-        </span>
-      </header>
+      <div class="quote">
+        <h1>
+          <span class="first-quote">{{ quote[0] }} </span>
+          <span class="white-quote">{{ quote[1] }}</span>
+          <br />
+          <span class="last-quote">{{ quote[2] }}</span>
+        </h1>
+      </div>
     </div>
-    <div class="quote">
-      <h1>
-        <span class="first-quote">{{ quote[0] }} </span>
-        <span class="white-quote">{{ quote[1] }}</span>
-        <br />
-        <span class="last-quote">{{ quote[2] }}</span>
-      </h1>
-    </div>
-  </div>
   </div>
 </template>
 
@@ -43,13 +43,15 @@ export default {
 </script>
 
 <style lang="scss">
-
 .header-wrapper {
   display: flex;
   flex-direction: column;
   margin-bottom: 0;
   border-bottom: 1px solid #2e8b57;
   height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../assets/backhead2.png);
 
   @media (max-width: 576px) {
     height: 100vh;
@@ -71,12 +73,12 @@ export default {
 }
 
 .logo {
-  margin-top: 5rem;
+  margin-top: 6rem;
   text-align: center;
   margin-bottom: 1.5rem;
   border-radius: 100%;
-  width: 110px;
-  height: 110px;
+  width: 150px;
+  height: 150px;
 
   img {
     width: 100%;
@@ -185,19 +187,17 @@ export default {
   }
 }
 
-
 @keyframes MoveInUp {
-   0% {
-      opacity: 0;
-      transform: translateY(-10rem);
-   }
-   80% {
-      transform: translateY(1rem);
-   }
-   100% {
-      opacity: 1;
-      transform: translate(0);
-   }
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  80% {
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
-
 </style>

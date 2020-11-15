@@ -24,7 +24,7 @@ export default {
 
    data() {
       return {
-         quoteText: ["GET TO KNOW", "ME", "A LITTLE BIT BETTER"],
+         quoteText: ["GET TO KNOW", "ME", "A LITTLE BETTER"],
       };
    },
 

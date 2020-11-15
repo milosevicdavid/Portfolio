@@ -1,7 +1,7 @@
 <template>
    <Landing>
       <div class="index_all">
-         <Header :quote="quoteText" />
+         <Header  :quote="quoteText" />
          <div class="index_wrapper">
             <div class="index_left">
                <g-link to="/about/">

@@ -4,7 +4,7 @@
       <div class="header">
         <div class="logo">
           <g-link to="/">
-            <img src="../assets/dt2.png" />
+            <img src="../assets/bigdt.png" />
           </g-link>
         </div>
         <header class="links">

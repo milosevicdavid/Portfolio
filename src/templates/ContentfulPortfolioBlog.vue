@@ -89,6 +89,7 @@
                 <div id="body" class="blog-text" v-html="body" />
             </div>
         </div>
+        <Disqus shortname="davidiansite-netlify-app" :identifier="$page.post.title" />
     </Layout>
 </template>
 

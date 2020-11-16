@@ -1,7 +1,7 @@
 <template>
    <Landing>
       <div class="index_all">
-         <Header  :quote="quoteText" />
+         <Header :quote="quoteText" />
          <div class="index_wrapper">
             <div class="index_left">
                <g-link to="/about/">
@@ -11,12 +11,10 @@
                      </div>
                      <div class="description-text">
                         <p>
-                           Welcome to my portfolio page ! My name is David
-                           Milošević and I am a web developer from Belgrade.
-                           Starting from here, you can get info about my
-                           projects and web development technologies that
-                           interests me, skills that I possess, contact info.
-                           Enter Here...
+                           Hi, my name is David Milošević and I'm a web
+                           developer residing in Belgrade, Serbia. Starting from here, you can
+                           get info about my projects, career, web technologies
+                           that I'm using, things that I like. Get to know me better !
                         </p>
                      </div>
                   </div>
@@ -32,9 +30,9 @@
                      <div class="description-text">
                         <p>
                            Discover the latest news in tech and web development
-                           in this articles section! The most fresh knowledge
-                           about all kinds of technologies I am involved in.
-                           Some of the titles are...
+                           in this articles section! Fresh topics about all
+                           kinds of technologies I am involved in. Read about it
+                           here.
                         </p>
                      </div>
                   </div>

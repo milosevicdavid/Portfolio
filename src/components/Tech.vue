@@ -30,6 +30,10 @@
           <div class="icon-t">
        <g-image src="~/assets/linux.svg" width="80"/>
      </div>
+          <div class="icon-t">
+       <g-image src="~/assets/disqus.svg" width="80"/>
+     </div>
+
   </div>
 </template>
 

@@ -10,10 +10,12 @@ import VueSocialSharing from "vue-social-sharing";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import "~/assets/style.scss";
+import VueDisqus from 'vue-disqus'
 
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.use(BootstrapVue);
+  Vue.use(VueDisqus)
   Vue.use(VueSocialSharing);
   Vue.component("Layout", DefaultLayout);
   Vue.component("Landing", Landing);

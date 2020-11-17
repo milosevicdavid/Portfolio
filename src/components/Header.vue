@@ -19,13 +19,16 @@
           </span>
         </header>
       </div>
-      <div class="quote">
+      <div v-if="isPage"  class="quote">
         <h1>
-          <span class="first-quote">{{ quote[0] }} </span>
-          <span class="white-quote">{{ quote[1] }}</span>
+          <span  class="first-quote">{{ quote[0] }} </span>
+          <span  class="white-quote">{{ quote[1] }}</span>
           <br />
-          <span class="last-quote">{{ quote[2] }}</span>
+          <span  class="last-quote">{{ quote[2] }}</span>
         </h1>
+      </div>
+      <div v-else class="white-blog">
+        <h1>{{ blogTitle }}</h1>
       </div>
     </div>
   </div>
@@ -36,8 +39,16 @@ export default {
   props: {
     quote: {
       type: Array,
-      required: true,
+      required: false
     },
+    isPage: {
+      type: Boolean,
+      required: true
+    },
+    blogTitle: {
+      type: String,
+      required: false
+    }
   },
 };
 </script>
@@ -52,6 +63,7 @@ export default {
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(../assets/backhead2.png);
+  overflow: hidden;
 
   @media (max-width: 576px) {
     height: 100vh;
@@ -115,10 +127,21 @@ export default {
 .white-quote {
   animation: fadeInSecond 2s ease-in;
   color: wheat;
+  text-transform: uppercase;
 }
 
 .last-quote {
   animation: fadeInThird 2.8s ease-in;
+}
+
+.white-blog {
+  animation: fadeInFirst 2s ease-in;
+  color: wheat;
+  text-transform: uppercase;
+  h1 {
+
+    margin-top: 200px;
+  }
 }
 
 .links {

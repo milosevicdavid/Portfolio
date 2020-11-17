@@ -26,14 +26,13 @@ body {
 }
 
 .layout {
-  max-width: 660px;
+  max-width: 800px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
 
   a {
     text-decoration: none;
-    color: white;
   }
 }
 

@@ -1,41 +1,49 @@
 <template>
     <Landing>
         <div class="height-wrapper">
-            <Header :quote="quoteText" />
+            <Header  :isPage="true" :quote="quoteText" />
             <div class="wrapper">
                 <div class="icons">
-                    <span class="circle-icon">
-                        <vue-fontawesome
-                            class="icon"
-                            icon="github"
-                            size="1.5"
-                            color="#2E8B57"
-                        ></vue-fontawesome>
-                    </span>
-                    <span class="circle-icon">
-                        <vue-fontawesome
-                            class="icon"
-                            icon="instagram"
-                            size="1.5"
-                            color="#2E8B57"
-                        ></vue-fontawesome>
-                    </span>
-                    <span class="circle-icon">
-                        <vue-fontawesome
-                            class="icon"
-                            icon="linkedin"
-                            size="1.5"
-                            color="#2E8B57"
-                        ></vue-fontawesome>
-                    </span>
-                    <span class="circle-icon">
-                        <vue-fontawesome
-                            class="icon"
-                            icon="envelope"
-                            size="1.4"
-                            color="#2E8B57"
-                        ></vue-fontawesome>
-                    </span>
+                    <a href="https://github.com/milosevicdavid">
+                        <span class="circle-icon">
+                            <vue-fontawesome
+                                class="icon"
+                                icon="github"
+                                size="1.5"
+                                color="#2E8B57"
+                            ></vue-fontawesome>
+                        </span>
+                    </a>
+                    <a href="https://www.instagram.com/miloshevitshdavid/">
+                        <span class="circle-icon">
+                            <vue-fontawesome
+                                class="icon"
+                                icon="instagram"
+                                size="1.5"
+                                color="#2E8B57"
+                            ></vue-fontawesome>
+                        </span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/david-milosevic-9391a617/">
+                        <span class="circle-icon">
+                            <vue-fontawesome
+                                class="icon"
+                                icon="linkedin"
+                                size="1.5"
+                                color="#2E8B57"
+                            ></vue-fontawesome>
+                        </span>
+                    </a>
+                    <g-link to="/contact">
+                        <span class="circle-icon">
+                            <vue-fontawesome
+                                class="icon"
+                                icon="envelope"
+                                size="1.4"
+                                color="#2E8B57"
+                            ></vue-fontawesome>
+                        </span>
+                    </g-link>
                 </div>
 
                 <div class="container">
@@ -233,22 +241,25 @@ export default {
     margin-top: 2rem;
     color: black;
     width: 350px;
+    transition: transform .4s ease;
 
     @media (max-width: 576px) {
         width: 270px;
     }
 
     &:hover {
-        border-bottom: 1px solid #2E8B57;
-        border-top: 1px solid #2E8B57;
+        transform: translateY(-0.3rem);
     }
-}
+
+    }
 
 
 
 .description {
     padding: 0.5rem;
     color: white;
+    border-radius: 0 0 1rem 1rem;
+    background-color: black;
    
    }
 

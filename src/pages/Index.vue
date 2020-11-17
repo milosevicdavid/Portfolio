@@ -1,7 +1,7 @@
 <template>
    <Landing>
       <div class="index_all">
-         <Header :quote="quoteText" />
+         <Header  :isPage="true" :quote="quoteText" />
          <div class="index_wrapper">
             <div class="index_left">
                <g-link to="/about/">
@@ -82,6 +82,7 @@ export default {
    font-weight: 600;
    color: #2e8b57;
    background-size: cover;
+   overflow: hidden;
 
    @media (max-width: 576px) {
       flex-direction: column;

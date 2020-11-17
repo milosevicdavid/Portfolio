@@ -59,7 +59,7 @@
                                         <b-card>
                                             <b-skeleton-img
                                                 card-img="top"
-                                                aspect="1:1"
+                                                aspect="2:1"
                                             ></b-skeleton-img>
                                             <br />
                                             <b-skeleton
@@ -261,10 +261,12 @@ export default {
     padding: 0.5rem;
     color: white;
     border: 1px solid #2e8b57;
+    height: 200px;
+    background-color: black;
    }
 
    .single-blog-image {
-       height: 150px;
+       height: 130px;
           }
 
 .pages {

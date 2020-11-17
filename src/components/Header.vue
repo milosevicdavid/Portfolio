@@ -138,9 +138,10 @@ export default {
   animation: fadeInFirst 2s ease-in;
   color: wheat;
   text-transform: uppercase;
+  margin-left: 1rem;
   h1 {
 
-    margin-top: 200px;
+    margin-top: 150px;
   }
 }
 

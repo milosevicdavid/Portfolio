@@ -87,6 +87,7 @@
                                         <g-image
                                             alt="Example image"
                                             :src="node.image.file.url"
+                                            class="single-blog-image"
                                         />
                                         <div class="description">
                                             <div class="blog-title">
@@ -242,6 +243,7 @@ export default {
     color: black;
     width: 350px;
     transition: transform .4s ease;
+    
 
     @media (max-width: 576px) {
         width: 270px;
@@ -258,10 +260,12 @@ export default {
 .description {
     padding: 0.5rem;
     color: white;
-    border-radius: 0 0 1rem 1rem;
-    background-color: black;
-   
+    border: 1px solid #2e8b57;
    }
+
+   .single-blog-image {
+       height: 150px;
+          }
 
 .pages {
     margin-top: 1rem;

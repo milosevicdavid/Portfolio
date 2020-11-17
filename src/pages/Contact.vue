@@ -61,6 +61,10 @@ export default {
     Header,
     Footer,
   },
+ metaInfo: {
+        title: "Contact",
+    },
+
 };
 </script>
 

@@ -153,10 +153,7 @@ export default {
   align-items: center;
   cursor: pointer;
   font-size: 1.5rem;
-  animation-name: MoveInUp;
-  animation-duration: 2s;
-  animation-timing-function: ease-out;
-
+  
   a:hover {
     color: wheat;
     border-bottom: 1px solid white;

@@ -84,11 +84,6 @@
                                     </template>
                                     <br />
                                     <div class="b-card">
-                                        <g-image
-                                            alt="Example image"
-                                            :src="node.image.file.url"
-                                            class="single-blog-image"
-                                        />
                                         <div class="description">
                                             <div class="blog-title">
                                                 <h2>
@@ -99,6 +94,11 @@
                                                 Posted on {{ node.date }}
                                             </p>
                                             <p>Read More...</p>
+                                            <g-image
+                                                alt="Example image"
+                                                :src="node.image.file.url"
+                                                class="single-blog-image"
+                                            />
                                         </div>
                                     </div>
                                 </b-skeleton-wrapper>
@@ -261,13 +261,16 @@ export default {
     padding: 0.5rem;
     color: white;
     border: 1px solid #2e8b57;
-    height: 200px;
     background-color: black;
+
+
    }
 
+
    .single-blog-image {
-       height: 130px;
-          }
+
+       margin: auto;
+                }
 
 .pages {
     margin-top: 1rem;

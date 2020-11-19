@@ -130,7 +130,7 @@ import Footer from "~/components/Footer";
 export default {
     data() {
         return {
-            website: "davidiansite.netlify.app",
+            website: "davidian.tech",
         };
     },
 

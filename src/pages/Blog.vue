@@ -57,11 +57,6 @@
                                 <b-skeleton-wrapper :loading="loading">
                                     <template v-slot:loading>
                                         <b-card>
-                                            <b-skeleton-img
-                                                card-img="top"
-                                                aspect="2:1"
-                                            ></b-skeleton-img>
-                                            <br />
                                             <b-skeleton
                                                 width="85%"
                                             ></b-skeleton>
@@ -80,6 +75,11 @@
                                             <b-skeleton
                                                 width="70%"
                                             ></b-skeleton>
+                                        <br />
+                                        <b-skeleton-img
+                                            card-img="top"
+                                            aspect="2:1"
+                                        ></b-skeleton-img>
                                         </b-card>
                                     </template>
                                     <br />

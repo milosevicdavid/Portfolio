@@ -267,11 +267,6 @@ export default {
    }
 
 
-   .single-blog-image {
-
-       margin: auto;
-                }
-
 .pages {
     margin-top: 1rem;
     padding: 1rem;

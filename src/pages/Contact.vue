@@ -3,7 +3,7 @@
   <div class="index_all">
     <Header isPage="true" :quote="quoteText" />
     <div class="center-mail">
-      <form action="https://formspree.io/f/xdopdwjy" method="POST" class="form">
+      <form action="https://formspree.io/f/xvovbprl" method="POST" class="form">
         <div>
           <label htmlFor="name">name</label>
           <input

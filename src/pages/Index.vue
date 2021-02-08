@@ -79,7 +79,7 @@ export default {
 
 .index_wrapper {
    display: flex;
-   font-weight: 600;
+   font-weight: 500;
    color: #2e8b57;
    background-size: cover;
    overflow: hidden;
@@ -101,8 +101,8 @@ export default {
       margin: 1rem auto;
       text-indent: 10%;
       font-size: 1.2rem;
-      line-height: 1.5rem;
-      word-spacing: 0.4rem;
+     /* line-height: 1.5rem; */
+     /* word-spacing: 0.4rem; */
    }
 
    @media (max-width: 576px) {

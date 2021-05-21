@@ -61,20 +61,13 @@
 import Tech from "~/components/Tech";
 
 export default {
-<<<<<<< HEAD
   components: {
     Tech
   }
-=======
-    components: {
-        Tech,
-    },
->>>>>>> b997e7e50ccf733659419d961b8811014797a402
 };
 </script>
 
 <style lang="scss">
-<<<<<<< HEAD
 .icons-wrap {
   display: flex;
   justify-content: space-between;
@@ -132,26 +125,25 @@ export default {
 
 .circle-icon {
   padding: 1rem;
-=======
 
-.icons-wrap {
+  .icons-wrap {
     display: flex;
     justify-content: space-between;
 
     @media (max-width: 576px) {
-        flex-direction: column;
-        width: 100%;
+      flex-direction: column;
+      width: 100%;
     }
-}
+  }
 
-.connect {
+  .connect {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-}
+  }
 
-.footer {
+  .footer {
     padding-top: 3rem;
     display: flex;
     justify-content: center;
@@ -161,36 +153,36 @@ export default {
     border-top: 1px solid #2e8b57;
 
     @media (max-width: 576px) {
-        flex-direction: column;
+      flex-direction: column;
     }
-}
+  }
 
-.copyright {
+  .copyright {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
     font-weight: 700;
-}
+  }
 
-.tech {
+  .tech {
     margin-top: 2rem;
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.icons {
+  .icons {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
+  }
 
-.circle-icon {
+  .circle-icon {
     padding: 1rem;
->>>>>>> b997e7e50ccf733659419d961b8811014797a402
+  }
 }
 </style>

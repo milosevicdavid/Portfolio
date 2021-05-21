@@ -61,13 +61,20 @@
 import Tech from "~/components/Tech";
 
 export default {
+<<<<<<< HEAD
   components: {
     Tech
   }
+=======
+    components: {
+        Tech,
+    },
+>>>>>>> b997e7e50ccf733659419d961b8811014797a402
 };
 </script>
 
 <style lang="scss">
+<<<<<<< HEAD
 .icons-wrap {
   display: flex;
   justify-content: space-between;
@@ -125,5 +132,65 @@ export default {
 
 .circle-icon {
   padding: 1rem;
+=======
+
+.icons-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 576px) {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.connect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.footer {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 120px;
+    width: 100%;
+    border-top: 1px solid #2e8b57;
+
+    @media (max-width: 576px) {
+        flex-direction: column;
+    }
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-weight: 700;
+}
+
+.tech {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.circle-icon {
+    padding: 1rem;
+>>>>>>> b997e7e50ccf733659419d961b8811014797a402
 }
 </style>

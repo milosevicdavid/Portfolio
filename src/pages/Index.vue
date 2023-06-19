@@ -70,6 +70,11 @@ export default {
   background-image: url(../assets/workstation.png);
   background-size: cover;
 
+  @media (min-width: 576px) {
+    width: 100vw;
+    height: 100vh;
+  }
+
   @media (max-width: 576px) {
     background-image: url(../assets/workstation2.png);
     background-size: cover;
